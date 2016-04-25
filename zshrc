@@ -3,6 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt appendhistory beep extendedglob
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/netbear/.zshrc'
@@ -45,10 +46,7 @@ setopt PUSHD_MINUS
 
 zstyle ':completion:*' rehash true
 
-# Search
-#autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-#zle -N up-line-or-beginning-search
-#zle -N down-line-or-beginning-search
-#
-#[[ -n "${key[Up]}"   ]] && bindkey "${key[Up]}"
-
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
