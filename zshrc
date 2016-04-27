@@ -1,16 +1,13 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-unsetopt appendhistory beep extendedglob
+unsetopt APPEND_HISTORY BEEP EXTENDEDGLOB
+setopt INC_APPEND_HISTORY
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/netbear/.zshrc'
 
+zstyle :compinstall filename '/home/netbear/.zshrc'
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 # Menu select
 zstyle ':completion:*' menu select
@@ -50,3 +47,7 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 bindkey "^[3;5~" delete-char
+
+for file in ~/.zshrc.d/*.zsh; do
+  source "$file"
+done
