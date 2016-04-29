@@ -1,8 +1,11 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
 unsetopt APPEND_HISTORY BEEP EXTENDEDGLOB
 setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 bindkey -e
 
 zstyle :compinstall filename '/home/netbear/.zshrc'
