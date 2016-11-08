@@ -5,4 +5,5 @@ ln -s $(pwd)/zshrc ~/.zshrc
 mkdir -p /home/netbear/.cache/zsh
 
 ln -s $(pwd)/vimrc ~/.vimrc
+ln -s $(pwd)/vimrc.d ~/.vimrc.d
 
